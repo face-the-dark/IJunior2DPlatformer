@@ -5,12 +5,22 @@ public class HeroMovement : MonoBehaviour
 {
     private const float One = 1;
 
+    [Header("Base Movement Parameters")] [Space]
     [SerializeField] private float _moveSpeed = 5.0f;
     [SerializeField] private float _jumpForce = 10.0f;
+
+    [Header("Advanced Jump Parameters")] [Space]
+    [SerializeField] private bool _isMoreJumpControl = false;
+    [Range(0.5f, 1.0f)] [SerializeField] private float _jumpControlModifier = 0.5f;
     
     [SerializeField] private float _coyoteTime = 0.2f;
-    [SerializeField] private float _jumpBufferTime = 0.2f;
+    [SerializeField] private float _jumpBufferTime = 0.1f;
 
+    [Header("Soft Movement Parameters")] [Space]
+    [SerializeField] private bool _isSoftMovement = true;
+    [SerializeField] private float _softMovementAcceleration = 20.0f;
+
+    [Header("References")] [Space]
     [SerializeField] private LayerCheck _groundCheck;
 
     private Rigidbody2D _rigidbody;
@@ -39,7 +49,7 @@ public class HeroMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float xVelocity = _direction.x * _moveSpeed;
+        float xVelocity = CalculateXVelocity();
         float yVelocity = CalculateYVelocity();
 
         _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
@@ -66,6 +76,16 @@ public class HeroMovement : MonoBehaviour
             _jumpBufferCounter -= Time.deltaTime;
     }
 
+    private float CalculateXVelocity()
+    {
+        float xVelocity = _direction.x * _moveSpeed;
+        
+        if (_isSoftMovement) 
+            xVelocity = Mathf.Lerp(_rigidbody.velocity.x, xVelocity, Time.deltaTime * _softMovementAcceleration);
+
+        return xVelocity;
+    }
+
     private float CalculateYVelocity()
     {
         float yVelocity = _rigidbody.velocity.y;
@@ -78,7 +98,9 @@ public class HeroMovement : MonoBehaviour
 
         if (_isJumpPressing == false && _rigidbody.velocity.y > 0)
         {
-            yVelocity *= 0.5f;
+            if (_isMoreJumpControl)
+                yVelocity *= _jumpControlModifier;
+            
             _coyoteTimeCounter = 0;
         }
 
