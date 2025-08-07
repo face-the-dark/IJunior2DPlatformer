@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utils;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour

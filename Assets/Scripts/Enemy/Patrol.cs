@@ -6,17 +6,17 @@ namespace Enemy
 {
     public class Patrol : MonoBehaviour
     {
-        [SerializeField] private Transform _pointsParent;
+        [SerializeField] private Transform _waypointsContainer;
         [SerializeField] private float _treshold = 1f;
 
-        private Transform[] _points;
-        private int _currentPointIndex = 0;
+        private Transform[] _waypoints;
+        private int _destinationPointIndex = 0;
     
         public event Action<Vector2> DirectionChanged;
 
         private void Awake()
         {
-            _points = _pointsParent.GetComponentsInChildren<Transform>();
+            _waypoints = _waypointsContainer.GetComponentsInChildren<Transform>();
         
             StartCoroutine(DoPatrol());
         }
@@ -26,9 +26,9 @@ namespace Enemy
             while (enabled)
             {
                 if (InOnPoint()) 
-                    _currentPointIndex = (_currentPointIndex + 1) % _points.Length;
+                    _destinationPointIndex = (_destinationPointIndex + 1) % _waypoints.Length;
             
-                Vector3 direction = _points[_currentPointIndex].position - transform.position;
+                Vector3 direction = _waypoints[_destinationPointIndex].position - transform.position;
             
                 direction.y = 0;
                 direction.Normalize();
@@ -40,6 +40,6 @@ namespace Enemy
         }
 
         private bool InOnPoint() => 
-            (_points[_currentPointIndex].position - transform.position).magnitude < _treshold;
+            (_waypoints[_destinationPointIndex].position - transform.position).magnitude < _treshold;
     }
 }
