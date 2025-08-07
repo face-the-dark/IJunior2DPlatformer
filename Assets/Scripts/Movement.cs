@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HeroMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private const float One = 1;
 

@@ -1,23 +1,23 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(HeroMovement))]
-[RequireComponent(typeof(HeroAnimator))]
+[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(CreatureAnimator))]
 public class Patrol : MonoBehaviour
 {
     [SerializeField] private Transform _pointsParent;
     [SerializeField] private float _treshold = 1f;
     
-    private HeroMovement _movement;
-    private HeroAnimator _animator;
+    private Movement _movement;
+    private CreatureAnimator _animator;
 
     private Transform[] _points;
     private int _currentPointIndex = 0;
 
     private void Awake()
     {
-        _movement = GetComponent<HeroMovement>();
-        _animator = GetComponent<HeroAnimator>();
+        _movement = GetComponent<Movement>();
+        _animator = GetComponent<CreatureAnimator>();
         
         _points = _pointsParent.GetComponentsInChildren<Transform>();
         

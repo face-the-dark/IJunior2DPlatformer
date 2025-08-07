@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(HeroMovement))]
-[RequireComponent(typeof(HeroAnimator))]
+[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(CreatureAnimator))]
 public class HeroInputReader : MonoBehaviour
 {
-    private HeroMovement _heroMovement;
-    private HeroAnimator _heroAnimator;
+    private Movement _movement;
+    private CreatureAnimator _creatureAnimator;
 
     private void Awake()
     {
-        _heroMovement = GetComponent<HeroMovement>();
-        _heroAnimator = GetComponent<HeroAnimator>();
+        _movement = GetComponent<Movement>();
+        _creatureAnimator = GetComponent<CreatureAnimator>();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
         Vector2 direction = context.ReadValue<Vector2>();
-        _heroMovement.SetDirection(direction);
-        _heroAnimator.SetDirection(direction);
+        _movement.SetDirection(direction);
+        _creatureAnimator.SetDirection(direction);
     }
 }

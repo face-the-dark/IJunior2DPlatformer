@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class HeroAnimator : MonoBehaviour
+public class CreatureAnimator : MonoBehaviour
 {
     private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
     private static readonly int VerticalVelocityKey = Animator.StringToHash("VerticalVelocity");
