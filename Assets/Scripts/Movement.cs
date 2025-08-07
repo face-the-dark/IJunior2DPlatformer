@@ -32,8 +32,12 @@ public class Movement : MonoBehaviour
     
     private float _coyoteTimeCounter;
     private float _jumpBufferCounter;
+    
+    public float DirectionX => _direction.x;
+    public float RigidbodyVelocityY => _rigidbody.velocity.y;
+    public bool IsGrounded => _isGrounded;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -57,7 +61,7 @@ public class Movement : MonoBehaviour
         UpdateSpriteDirection();
     }
 
-    public void SetDirection(Vector2 direction) =>
+    protected void SetDirection(Vector2 direction) =>
         _direction = direction;
 
     private void UpdateCoyoteCounter()

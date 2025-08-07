@@ -97,8 +97,8 @@ GameObject:
   - component: {fileID: 2119308506926382647}
   - component: {fileID: 2558401493875556852}
   - component: {fileID: 1436737400395193117}
-  - component: {fileID: 207058886714273151}
-  - component: {fileID: 453026041067540808}
+  - component: {fileID: 2212330969910485795}
+  - component: {fileID: 868498694603985774}
   - component: {fileID: 528481781942964935}
   m_Layer: 0
   m_Name: Enemy
@@ -121,7 +121,7 @@ Transform:
   m_Children:
   - {fileID: 4194358612926752948}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8816483422665208532
 SpriteRenderer:
@@ -258,7 +258,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &207058886714273151
+--- !u!114 &2212330969910485795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7029490953505298396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6629eb9f73e35944b885e4bf7f47dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dfa403fd47740728fe53c4aeb958d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
@@ -276,10 +276,10 @@ MonoBehaviour:
   _jumpControlModifier: 0.5
   _coyoteTime: 0.2
   _jumpBufferTime: 0.1
-  _isSoftMovement: 0
+  _isSoftMovement: 1
   _softMovementAcceleration: 20
   _groundCheck: {fileID: 6066174347816783044}
---- !u!114 &453026041067540808
+--- !u!114 &868498694603985774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,10 +288,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7029490953505298396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4838e8c6b4e946618e1eded91978495d, type: 3}
+  m_Script: {fileID: 11500000, guid: 29a8dbb949324c828b6057657e26af29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundCheck: {fileID: 6066174347816783044}
 --- !u!114 &528481781942964935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +303,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199d5bc1981896e4aa151d544c08744c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points:
-  - {fileID: 0}
-  - {fileID: 0}
+  _pointsParent: {fileID: 0}
   _treshold: 1

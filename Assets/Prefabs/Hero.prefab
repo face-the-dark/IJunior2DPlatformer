@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3336735774058866355}
   - component: {fileID: 8465274781215747982}
   - component: {fileID: 8621019724297421978}
-  - component: {fileID: 165052453270816604}
+  - component: {fileID: 7136333845286344114}
+  - component: {fileID: 8935956293761106027}
   - component: {fileID: 1985391295325622299}
-  - component: {fileID: 1871354071951030023}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 2470648989104504233}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5900295700669082731
 SpriteRenderer:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_DefaultActionMap: Hero
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &165052453270816604
+--- !u!114 &7136333845286344114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,11 +230,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 902434622738836710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6629eb9f73e35944b885e4bf7f47dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bbc1855ae3d4173945438ebfc8400e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 7
-  _jumpForce: 14
+  _moveSpeed: 5
+  _jumpForce: 10
   _isMoreJumpControl: 0
   _jumpControlModifier: 0.5
   _coyoteTime: 0.2
@@ -242,6 +242,18 @@ MonoBehaviour:
   _isSoftMovement: 1
   _softMovementAcceleration: 20
   _groundCheck: {fileID: 5174574794938603577}
+--- !u!114 &8935956293761106027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902434622738836710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b933603ae446478f72987863bd36be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1985391295325622299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,19 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf8efcbf63e4e23b8b6692363d861d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1871354071951030023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902434622738836710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4838e8c6b4e946618e1eded91978495d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundCheck: {fileID: 5174574794938603577}
 --- !u!1 &1701696436862727756
 GameObject:
   m_ObjectHideFlags: 0
