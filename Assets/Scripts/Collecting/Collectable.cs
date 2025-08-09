@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public abstract class Collectable : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out Collector collector))
         {
-            collector.Collect(this);
+            AddToCollector(collector);
             Destroy(gameObject);
         }
     }
+
+    protected abstract void AddToCollector(Collector collector);
 }

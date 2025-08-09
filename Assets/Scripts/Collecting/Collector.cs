@@ -1,17 +1,14 @@
 using System.Collections.Generic;
+using Collecting;
 using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-    private List<Collectable> _collectables;
+    private List<Apple> _apples;
 
-    private void Awake()
-    {
-        _collectables = new List<Collectable>();
-    }
+    private void Awake() => 
+        _apples = new List<Apple>();
 
-    public void Collect(Collectable collectable)
-    {
-        _collectables.Add(collectable);
-    }
+    public void Collect(Apple collectable) => 
+        _apples.Add(collectable);
 }

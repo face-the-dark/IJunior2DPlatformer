@@ -32702,7 +32702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa63ca409c104bb6bf76d694d320d46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectablePrefab: {fileID: 3388565145477908320, guid: 24b2e01d9a94dce41b4a680b68c81e02, type: 3}
+  _collectablePrefab: {fileID: 4010979778519915979, guid: 24b2e01d9a94dce41b4a680b68c81e02, type: 3}
   _spawnPointContainer: {fileID: 1136076211}
 --- !u!1001 &1293482711
 PrefabInstance:

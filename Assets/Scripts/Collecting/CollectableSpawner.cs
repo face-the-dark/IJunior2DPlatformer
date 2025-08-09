@@ -12,9 +12,7 @@ public class CollectableSpawner : MonoBehaviour
     {
         _spawnPoints = _spawnPointContainer.GetComponentsInChildren<SpawnPoint>();
         
-        foreach (SpawnPoint spawnPoint in _spawnPoints)
-        {
+        foreach (SpawnPoint spawnPoint in _spawnPoints) 
             Instantiate(_collectablePrefab, spawnPoint.transform.position, Quaternion.identity);
-        }
     }
 }

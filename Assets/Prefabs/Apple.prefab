@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 940609869760449376}
   - component: {fileID: 4610674873092253971}
   - component: {fileID: 1006925651068113719}
-  - component: {fileID: 3388565145477908320}
+  - component: {fileID: 4010979778519915979}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4610674873092253971
 SpriteRenderer:
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.125}
   serializedVersion: 2
   m_Radius: 0.45
---- !u!114 &3388565145477908320
+--- !u!114 &4010979778519915979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7729704404532480117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6299240b25cc4b9eb574089f9c29a818, type: 3}
+  m_Script: {fileID: 11500000, guid: 95e4ecc0c6dc4fd4b42d7eab03865a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

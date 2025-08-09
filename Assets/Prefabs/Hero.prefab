@@ -242,7 +242,7 @@ MonoBehaviour:
   _jumpBufferTime: 0.1
   _isSoftMovement: 1
   _softMovementAcceleration: 20
-  _groundCheck: {fileID: 5174574794938603577}
+  _groundCheck: {fileID: 3901129329885776321}
 --- !u!114 &8935956293761106027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,8 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2470648989104504233}
-  - component: {fileID: 1889384040091961243}
-  - component: {fileID: 5174574794938603577}
+  - component: {fileID: 3901129329885776321}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -305,49 +304,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701696436862727756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.357, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6484720595191931454}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1889384040091961243
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701696436862727756}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &5174574794938603577
+--- !u!114 &3901129329885776321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92de53fab6b947cb8c5ebe8dfdafb286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layerMask:
+  _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  IsTouchingLayer: 0
+  _groundCheckRadius: 0.5
+  _groundCheckColor: {r: 0, g: 1, b: 0, a: 1}

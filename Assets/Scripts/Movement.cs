@@ -4,7 +4,8 @@ using Utils;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-    private const float One = 1;
+    private static readonly Quaternion SpriteDirectionRightRotation = Quaternion.Euler(0f, 0f, 0f);
+    private static readonly Quaternion SpriteDirectionLeftRotation = Quaternion.Euler(0f, 180f, 0f);
 
     [Header("Base Movement Parameters")] [Space]
     [SerializeField] private float _moveSpeed = 5.0f;
@@ -21,8 +22,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool _isSoftMovement = true;
     [SerializeField] private float _softMovementAcceleration = 20.0f;
 
-    [Header("References")] [Space]
-    [SerializeField] private LayerCheck _groundCheck;
+    [Header("Ground Check Parameters")] [Space]
+    [SerializeField] private GroundCheck _groundCheck;
 
     private Rigidbody2D _rigidbody;
 
@@ -45,7 +46,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        _isGrounded = _groundCheck.IsTouchingLayer;
+        _isGrounded = _groundCheck.IsGrounded;
         _isJumpPressing = _direction.y > 0;
 
         UpdateCoyoteCounter();
@@ -115,8 +116,8 @@ public class Movement : MonoBehaviour
     private void UpdateSpriteDirection()
     {
         if (_direction.x > 0)
-            transform.localScale = new Vector3(One, One, One);
+            transform.rotation = SpriteDirectionRightRotation;
         else if (_direction.x < 0)
-            transform.localScale = new Vector3(-One, One, One);
+            transform.rotation = SpriteDirectionLeftRotation;
     }
 }
