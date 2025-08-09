@@ -14,10 +14,13 @@ GameObject:
   - component: {fileID: 3336735774058866355}
   - component: {fileID: 8465274781215747982}
   - component: {fileID: 8621019724297421978}
-  - component: {fileID: 7136333845286344114}
   - component: {fileID: 8935956293761106027}
   - component: {fileID: 1985391295325622299}
   - component: {fileID: 8949847187798791563}
+  - component: {fileID: 8672433237103120893}
+  - component: {fileID: 6025370003850982367}
+  - component: {fileID: 6952153585856953452}
+  - component: {fileID: 8552700378324326832}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -39,7 +42,7 @@ Transform:
   m_Children:
   - {fileID: 2470648989104504233}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5900295700669082731
 SpriteRenderer:
@@ -222,27 +225,6 @@ MonoBehaviour:
   m_DefaultActionMap: Hero
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7136333845286344114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902434622738836710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bbc1855ae3d4173945438ebfc8400e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 5
-  _jumpForce: 10
-  _isMoreJumpControl: 0
-  _jumpControlModifier: 0.5
-  _coyoteTime: 0.2
-  _jumpBufferTime: 0.1
-  _isSoftMovement: 1
-  _softMovementAcceleration: 20
-  _groundCheck: {fileID: 3901129329885776321}
 --- !u!114 &8935956293761106027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +259,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdc7ad06dc02473dba195f88f4ec551d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8672433237103120893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902434622738836710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c092ccb80a427f923ea9353ad5eb3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 14
+  _isMoreJumpControl: 0
+  _jumpControlModifier: 0.5
+  _coyoteTime: 0.2
+  _jumpBufferTime: 0.1
+  _groundCheck: {fileID: 3901129329885776321}
+--- !u!114 &6025370003850982367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902434622738836710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7bceccfb6e49a9abe728db657240ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6952153585856953452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902434622738836710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de5c21119cb490590c5eb4b09423a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 7
+  _isSoftMovement: 1
+  _softMovementAcceleration: 20
+--- !u!114 &8552700378324326832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902434622738836710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d58a75ff7674e56a996914bbade9f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1701696436862727756

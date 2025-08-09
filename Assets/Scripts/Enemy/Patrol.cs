@@ -40,6 +40,6 @@ namespace Enemy
         }
 
         private bool InOnPoint() => 
-            (_waypoints[_destinationPointIndex].position - transform.position).magnitude < _treshold;
+            (_waypoints[_destinationPointIndex].position - transform.position).sqrMagnitude < _treshold;
     }
 }

@@ -5,18 +5,16 @@ public class CreatureAnimator : MonoBehaviour
 {
     private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
 
+    private Movement _movement;
+    
     protected Animator Animator;
-    protected Movement Movement;
 
-    private void Awake()
+    protected virtual void Awake()
     {
+        _movement = GetComponent<Movement>();
         Animator = GetComponent<Animator>();
-        Movement = GetComponent<Movement>();
     }
 
-    protected virtual void FixedUpdate()
-    {
-        Animator.SetBool(IsRunningKey, Movement.DirectionX != 0);
-    }
-
+    protected virtual void FixedUpdate() => 
+        Animator.SetBool(IsRunningKey, _movement.DirectionX != 0);
 }

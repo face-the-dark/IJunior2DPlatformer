@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Enemy
 {
     [RequireComponent(typeof(Patrol))]
-    public class EnemyMovement : Movement
+    public class EnemyFlipper : Flipper
     {
         private Patrol _patrol;
 
@@ -11,9 +11,9 @@ namespace Enemy
             _patrol = GetComponent<Patrol>();
 
         private void OnEnable() => 
-            _patrol.DirectionChanged += SetDirection;
+            _patrol.DirectionChanged += UpdateSpriteDirection;
 
         private void OnDisable() => 
-            _patrol.DirectionChanged -= SetDirection;
+            _patrol.DirectionChanged -= UpdateSpriteDirection;
     }
 }

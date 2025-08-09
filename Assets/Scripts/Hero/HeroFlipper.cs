@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Hero
 {
     [RequireComponent(typeof(HeroInputReader))]
-    public class HeroMovement : Movement
+    public class HeroFlipper : Flipper
     {
         private HeroInputReader _inputReader;
 
@@ -11,9 +11,9 @@ namespace Hero
             _inputReader = GetComponent<HeroInputReader>();
 
         private void OnEnable() => 
-            _inputReader.DirectionChanged += SetDirection;
+            _inputReader.DirectionChanged += UpdateSpriteDirection;
 
         private void OnDisable() => 
-            _inputReader.DirectionChanged -= SetDirection;
+            _inputReader.DirectionChanged -= UpdateSpriteDirection;
     }
 }
