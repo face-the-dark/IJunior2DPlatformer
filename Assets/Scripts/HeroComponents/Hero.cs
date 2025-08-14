@@ -1,14 +1,19 @@
+using System;
 using UnityEngine;
 
-namespace Hero
+namespace HeroComponents
 {
     [RequireComponent(typeof(HeroMovement))]
     [RequireComponent(typeof(Jumper))]
+    [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(Rigidbody2D))]
     public class Hero : MonoBehaviour
     {
+        [SerializeField] private float _damageForce = 10.0f;
+        
         private HeroMovement _movement;
         private Jumper _jumper;
+        private Health _health;
         private Rigidbody2D _rigidbody;
 
         public bool IsGrounded => _jumper.IsGrounded;
@@ -18,8 +23,18 @@ namespace Hero
         {
             _movement =  GetComponent<HeroMovement>();
             _jumper = GetComponent<Jumper>();
+            _health = GetComponent<Health>();
             _rigidbody = GetComponent<Rigidbody2D>();
         }
+
+        private void OnEnable() => 
+            _health.DamageTaken += OnDamageTaken;
+
+        private void OnDisable() => 
+            _health.DamageTaken -= OnDamageTaken;
+
+        private void OnDamageTaken() => 
+            _rigidbody.AddForce(Vector2.up * _damageForce, ForceMode2D.Impulse);
 
         private void FixedUpdate()
         {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Hero
+namespace HeroComponents
 {
     [RequireComponent(typeof(HeroInputReader))]
     public class HeroMovement : Movement

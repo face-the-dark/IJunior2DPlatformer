@@ -14,14 +14,10 @@ namespace Enemy
     
         public event Action<Vector2> DirectionChanged;
 
-        private void Awake()
-        {
+        private void Awake() => 
             _waypoints = _waypointsContainer.GetComponentsInChildren<Transform>();
-        
-            StartCoroutine(DoPatrol());
-        }
 
-        private IEnumerator DoPatrol()
+        public IEnumerator DoPatrol()
         {
             while (enabled)
             {

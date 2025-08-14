@@ -5,12 +5,18 @@ namespace Collecting
 {
     public class Collector : MonoBehaviour
     {
-        private List<Apple> _apples;
+        private List<Coin> _coins;
 
         private void Awake() => 
-            _apples = new List<Apple>();
+            _coins = new List<Coin>();
 
-        public void Collect(Apple collectable) => 
-            _apples.Add(collectable);
+        public void Collect(Coin coin) => 
+            _coins.Add(coin);
+
+        public void Collect(HealPotion healPotion)
+        {
+            if (TryGetComponent(out Health health)) 
+                health.Heal(healPotion);
+        }
     }
 }
