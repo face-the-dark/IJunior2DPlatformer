@@ -6,14 +6,24 @@ namespace Enemy
     public class EnemyFlipper : Flipper
     {
         private Patrol _patrol;
+        private EnemyBrain _brain;
 
-        protected void Awake() => 
+        protected void Awake()
+        {
             _patrol = GetComponent<Patrol>();
+            _brain = GetComponent<EnemyBrain>();
+        }
 
-        private void OnEnable() => 
+        private void OnEnable()
+        {
             _patrol.DirectionChanged += UpdateSpriteDirection;
+            _brain.DirectionChangedToHero += UpdateSpriteDirection;
+        }
 
-        private void OnDisable() => 
+        private void OnDisable()
+        {
             _patrol.DirectionChanged -= UpdateSpriteDirection;
+            _brain.DirectionChangedToHero -= UpdateSpriteDirection;
+        }
     }
 }

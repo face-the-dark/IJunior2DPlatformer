@@ -6,14 +6,24 @@ namespace Enemy
     public class EnemyMovement : Movement
     {
         private Patrol _patrol;
+        private EnemyBrain _brain;
 
-        protected void Awake() => 
+        protected void Awake()
+        {
             _patrol = GetComponent<Patrol>();
+            _brain = GetComponent<EnemyBrain>();
+        }
 
-        private void OnEnable() => 
+        private void OnEnable()
+        {
             _patrol.DirectionChanged += SetDirection;
+            _brain.DirectionChangedToHero += SetDirection;
+        }
 
-        private void OnDisable() => 
+        private void OnDisable()
+        {
             _patrol.DirectionChanged -= SetDirection;
+            _brain.DirectionChangedToHero -= SetDirection;
+        }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Hero
+namespace HeroComponents
 {
     [RequireComponent(typeof(Hero))]
     public class HeroAnimator : CreatureAnimator

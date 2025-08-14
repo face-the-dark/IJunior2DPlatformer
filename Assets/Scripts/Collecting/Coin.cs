@@ -1,6 +1,6 @@
 namespace Collecting
 {
-    public class Apple : Collectable
+    public class Coin : Collectable
     {
         protected override void AddToCollector(Collector collector) => 
             collector.Collect(this);

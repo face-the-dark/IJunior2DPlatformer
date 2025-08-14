@@ -3,7 +3,7 @@ using Utils;
 
 namespace Collecting
 {
-    public class CollectableSpawner : MonoBehaviour
+    public class PointCollectableSpawner : MonoBehaviour
     {
         [SerializeField] private Collectable _collectablePrefab;
         [SerializeField] private Transform _spawnPointContainer;
