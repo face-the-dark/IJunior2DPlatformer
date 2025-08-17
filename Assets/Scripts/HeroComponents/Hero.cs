@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 namespace HeroComponents
 {
-    [RequireComponent(typeof(HeroMovement))]
+    [RequireComponent(typeof(HeroMover))]
     [RequireComponent(typeof(Jumper))]
     [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(Rigidbody2D))]
@@ -11,7 +10,7 @@ namespace HeroComponents
     {
         [SerializeField] private float _damageForce = 10.0f;
         
-        private HeroMovement _movement;
+        private HeroMover _mover;
         private Jumper _jumper;
         private Health _health;
         private Rigidbody2D _rigidbody;
@@ -21,7 +20,7 @@ namespace HeroComponents
         
         private void Awake()
         {
-            _movement =  GetComponent<HeroMovement>();
+            _mover =  GetComponent<HeroMover>();
             _jumper = GetComponent<Jumper>();
             _health = GetComponent<Health>();
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -38,7 +37,7 @@ namespace HeroComponents
 
         private void FixedUpdate()
         {
-            float xVelocity = _movement.CalculateXVelocity(_rigidbody.velocity.x);
+            float xVelocity = _mover.CalculateXVelocity(_rigidbody.velocity.x);
             float yVelocity = _jumper.CalculateYVelocity(_rigidbody.velocity.y);
 
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);

@@ -2,18 +2,18 @@ using UnityEngine;
 
 namespace HeroComponents
 {
-    [RequireComponent(typeof(HeroInputReader))]
+    [RequireComponent(typeof(HeroMover))]
     public class HeroFlipper : Flipper
     {
-        private HeroInputReader _inputReader;
+        private HeroMover _heroMover;
 
         private void Awake() => 
-            _inputReader = GetComponent<HeroInputReader>();
+            _heroMover = GetComponent<HeroMover>();
 
         private void OnEnable() => 
-            _inputReader.DirectionChanged += UpdateSpriteDirection;
+            _heroMover.DirectionChanged += UpdateSpriteDirection;
 
         private void OnDisable() => 
-            _inputReader.DirectionChanged -= UpdateSpriteDirection;
+            _heroMover.DirectionChanged -= UpdateSpriteDirection;
     }
 }

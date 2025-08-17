@@ -2,20 +2,20 @@ using UnityEngine;
 
 namespace Enemy
 {
-    [RequireComponent(typeof(EnemyMovement))]
+    [RequireComponent(typeof(EnemyMover))]
     [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private float _damageForce = 10.0f;
         
-        private EnemyMovement _movement;
+        private EnemyMover _mover;
         private Health _health;
         private Rigidbody2D _rigidbody;
 
         private void Awake()
         {
-            _movement = GetComponent<EnemyMovement>();
+            _mover = GetComponent<EnemyMover>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _health = GetComponent<Health>();
         }
@@ -31,7 +31,7 @@ namespace Enemy
 
         private void FixedUpdate()
         {
-            float xVelocity = _movement.CalculateXVelocity(_rigidbody.velocity.x);
+            float xVelocity = _mover.CalculateXVelocity(_rigidbody.velocity.x);
 
             _rigidbody.velocity = new Vector2(xVelocity, _rigidbody.velocity.y);
         }

@@ -10,12 +10,15 @@ namespace Enemy
         [SerializeField] private float _treshold = 1f;
 
         private Transform[] _waypoints;
-        private int _destinationPointIndex = 0;
+        private int _destinationPointIndex;
     
         public event Action<Vector2> DirectionChanged;
 
-        private void Awake() => 
+        private void Awake()
+        {
             _waypoints = _waypointsContainer.GetComponentsInChildren<Transform>();
+            _destinationPointIndex = 0;
+        }
 
         public IEnumerator DoPatrol()
         {
@@ -24,10 +27,8 @@ namespace Enemy
                 if (InOnPoint()) 
                     _destinationPointIndex = (_destinationPointIndex + 1) % _waypoints.Length;
             
-                Vector3 direction = _waypoints[_destinationPointIndex].position - transform.position;
-            
+                Vector3 direction = (_waypoints[_destinationPointIndex].position - transform.position).normalized;
                 direction.y = 0;
-                direction.Normalize();
 
                 DirectionChanged?.Invoke(direction);
 

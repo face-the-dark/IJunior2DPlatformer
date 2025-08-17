@@ -5,18 +5,29 @@ namespace Collecting
 {
     public class Collector : MonoBehaviour
     {
+        [SerializeField] private CollectZone _collectZone;
+        
         private List<Coin> _coins;
 
         private void Awake() => 
             _coins = new List<Coin>();
 
-        public void Collect(Coin coin) => 
-            _coins.Add(coin);
+        private void OnEnable() => 
+            _collectZone.OnCollect += Collect;
 
-        public void Collect(HealPotion healPotion)
+        private void OnDisable() => 
+            _collectZone.OnCollect -= Collect;
+
+        private void Collect(Collider2D other)
         {
-            if (TryGetComponent(out Health health)) 
-                health.Heal(healPotion);
+            if (other.TryGetComponent(out Coin coin)) 
+                _coins.Add(coin);
+            
+            if (other.TryGetComponent(out HealPotion healPotion) && TryGetComponent(out Health health))
+                health.HealItself(healPotion.Value);
+
+            if (other.TryGetComponent(out Collectable collectable)) 
+                Destroy(collectable.gameObject);
         }
     }
 }

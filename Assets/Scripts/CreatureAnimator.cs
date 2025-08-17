@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Animator))]
 public class CreatureAnimator : MonoBehaviour
@@ -8,14 +8,14 @@ public class CreatureAnimator : MonoBehaviour
     private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
     private static readonly int HitKey = Animator.StringToHash("Hit");
 
-    private Movement _movement;
+    private Mover _mover;
     private Health _health;
 
     protected Animator Animator;
 
     protected virtual void Awake()
     {
-        _movement = GetComponent<Movement>();
+        _mover = GetComponent<Mover>();
         _health = GetComponent<Health>();
         Animator = GetComponent<Animator>();
     }
@@ -27,7 +27,7 @@ public class CreatureAnimator : MonoBehaviour
         _health.DamageTaken -= PlayHit;
 
     protected virtual void FixedUpdate() => 
-        Animator.SetBool(IsRunningKey, _movement.DirectionX != 0);
+        Animator.SetBool(IsRunningKey, _mover.DirectionX != 0);
 
     private void PlayHit() => 
         Animator.SetTrigger(HitKey);

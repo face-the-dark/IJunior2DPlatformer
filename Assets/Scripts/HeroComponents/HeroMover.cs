@@ -3,7 +3,7 @@ using UnityEngine;
 namespace HeroComponents
 {
     [RequireComponent(typeof(HeroInputReader))]
-    public class HeroMovement : Movement
+    public class HeroMover : Mover
     {
         private HeroInputReader _inputReader;
 

@@ -1,14 +1,17 @@
+using System;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Mover : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 5.0f;
+    [SerializeField] private float _moveSpeed = 7.0f;
     [SerializeField] private bool _isSoftMovement = true;
     [SerializeField] private float _softMovementAcceleration = 20.0f;
 
     private Vector2 _direction;
     
     public float DirectionX => _direction.x;
+    
+    public event Action<Vector2> DirectionChanged;
     
     public float CalculateXVelocity(float rigidbodyVelocityX)
     {
@@ -20,6 +23,10 @@ public class Movement : MonoBehaviour
         return xVelocity;
     }
 
-    protected void SetDirection(Vector2 direction) => 
+    protected void SetDirection(Vector2 direction)
+    {
         _direction = direction;
+        
+        DirectionChanged?.Invoke(direction);
+    }
 }

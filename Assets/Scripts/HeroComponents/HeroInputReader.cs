@@ -18,10 +18,8 @@ namespace HeroComponents
 
         public void OnDoAttack(InputAction.CallbackContext context)
         {
-            if (context.performed)
-            {
+            if (context.performed) 
                 Attacked?.Invoke();
-            }
         }
     }
 }

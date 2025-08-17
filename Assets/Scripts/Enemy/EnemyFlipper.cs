@@ -2,28 +2,18 @@ using UnityEngine;
 
 namespace Enemy
 {
-    [RequireComponent(typeof(Patrol))]
+    [RequireComponent(typeof(EnemyMover))]
     public class EnemyFlipper : Flipper
     {
-        private Patrol _patrol;
-        private EnemyBrain _brain;
+        private EnemyMover _enemyMover;
 
-        protected void Awake()
-        {
-            _patrol = GetComponent<Patrol>();
-            _brain = GetComponent<EnemyBrain>();
-        }
+        protected void Awake() => 
+            _enemyMover = GetComponent<EnemyMover>();
 
-        private void OnEnable()
-        {
-            _patrol.DirectionChanged += UpdateSpriteDirection;
-            _brain.DirectionChangedToHero += UpdateSpriteDirection;
-        }
+        private void OnEnable() => 
+            _enemyMover.DirectionChanged += UpdateSpriteDirection;
 
-        private void OnDisable()
-        {
-            _patrol.DirectionChanged -= UpdateSpriteDirection;
-            _brain.DirectionChangedToHero -= UpdateSpriteDirection;
-        }
+        private void OnDisable() => 
+            _enemyMover.DirectionChanged -= UpdateSpriteDirection;
     }
 }

@@ -1,26 +1,17 @@
 using UnityEngine;
 
-public class Attacker : MonoBehaviour
+public abstract class Attacker : MonoBehaviour
 {
-    [SerializeField] private int _damage;
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private float _attackRadius;
-    
     [SerializeField] private Color _attackGizmosColor = Color.blue;
 
-    protected void DealDamage()
-    {
-        Collider2D[] targets = GetTargets();
+    [SerializeField] protected int Damage;
 
-        foreach (Collider2D target in targets)
-            if (target.TryGetComponent(out Health health))
-                health.TakeDamage(_damage);
-    }
+    protected abstract void DealDamage();
 
-    protected Collider2D[] GetTargets()
-    {
-        return Physics2D.OverlapCircleAll(_attackPoint.position, _attackRadius);
-    }
+    protected Collider2D[] GetTargets() => 
+        Physics2D.OverlapCircleAll(_attackPoint.position, _attackRadius);
 
     private void OnDrawGizmos()
     {

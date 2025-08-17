@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using HeroComponents;
 using UnityEngine;
@@ -10,24 +9,24 @@ namespace Enemy
     public class EnemyBrain : MonoBehaviour
     {
         [SerializeField] private AttackZone _attackZone;
-        [SerializeField] protected float _attackCooldown = 1f;
 
         private Patrol _patrol;
-        private EnemyAttacker _enemyAttacker;
-        
+        private EnemyAttacker _attacker;
+        private EnemyMover _mover;
+
+        private State _currentState;
         private Coroutine _currentCoroutine;
         private Hero _hero;
-        
-        public event Action<Vector2> DirectionChangedToHero;
 
         private void Awake()
         {
             _patrol = GetComponent<Patrol>();
-            _enemyAttacker = GetComponent<EnemyAttacker>();
+            _attacker = GetComponent<EnemyAttacker>();
+            _mover = GetComponent<EnemyMover>();
         }
 
         private void Start() => 
-            _currentCoroutine = StartCoroutine(_patrol.DoPatrol());
+            SwitchState(State.Patrol);
 
         private void OnEnable()
         {
@@ -44,52 +43,40 @@ namespace Enemy
         private void OnHeroEntered(Hero hero)
         {
             _hero = hero;
-            
-            StopCurrentCoroutine();
 
-            _currentCoroutine = StartCoroutine(GoToHero());
+            SwitchState(State.Chase);
         }
 
         private void OnHeroExited()
         {
             _hero = null;
             
-            StopCurrentCoroutine();
-
-            _currentCoroutine = StartCoroutine(_patrol.DoPatrol());
+            SwitchState(State.Patrol);
         }
 
-        private IEnumerator GoToHero()
+        private void SwitchState(State newState)
         {
-            while (enabled && _enemyAttacker.CanAttack() == false)
-            {
-                Vector2 directionToHero = _hero.transform.position - transform.position;
-            
-                directionToHero.y = 0;
-                directionToHero.Normalize();
-            
-                DirectionChangedToHero?.Invoke(directionToHero);
-                
-                yield return null;
-            }
+            if (_currentState == newState)
+                return;
             
             StopCurrentCoroutine();
-            
-            _currentCoroutine = StartCoroutine(AttackHero());
-        }
 
-        private IEnumerator AttackHero()
-        {
-            while (enabled && _enemyAttacker.CanAttack())
+            _currentState = newState;
+
+            switch (_currentState)
             {
-                _enemyAttacker.Attack();
-                
-                yield return new WaitForSeconds(_attackCooldown);
+                case State.Patrol:
+                    _currentCoroutine = StartCoroutine(DoPatrol());
+                    break;
+
+                case State.Chase:
+                    _currentCoroutine = StartCoroutine(GoToHero());
+                    break;
+
+                case State.Attack:
+                    _currentCoroutine = StartCoroutine(AttackHero());
+                    break;
             }
-            
-            StopCurrentCoroutine();
-            
-            _currentCoroutine = StartCoroutine(GoToHero());
         }
 
         private void StopCurrentCoroutine()
@@ -99,6 +86,27 @@ namespace Enemy
                 StopCoroutine(_currentCoroutine);
                 _currentCoroutine = null;
             }
+        }
+
+        private IEnumerator DoPatrol()
+        {
+            yield return _patrol.DoPatrol();
+            
+            SwitchState(State.Patrol);
+        }
+
+        private IEnumerator GoToHero()
+        {
+            yield return _mover.GoToHero(_hero);
+            
+            SwitchState(State.Attack);
+        }
+
+        private IEnumerator AttackHero()
+        {
+            yield return _attacker.AttackHero();
+
+            SwitchState(State.Chase);
         }
     }
 }

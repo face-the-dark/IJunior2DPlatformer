@@ -1,33 +1,32 @@
 using System;
-using Collecting;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth = 10;
+    [SerializeField] private int _maxValue = 10;
     
-    private int _currentHealth;
+    private int _currentValue;
 
     public event Action DamageTaken;
 
     private void Awake() => 
-        _currentHealth = _maxHealth;
+        _currentValue = _maxValue;
 
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
+        _currentValue -= damage;
 
-        if (_currentHealth <= 0) 
-            _currentHealth = 0;
+        if (_currentValue <= 0) 
+            _currentValue = 0;
         
         DamageTaken?.Invoke();
     }
 
-    public void Heal(HealPotion healPotion)
+    public void HealItself(int healValue)
     {
-        _currentHealth += healPotion.Value;
+        _currentValue += healValue;
         
-        if (_currentHealth > _maxHealth)
-            _currentHealth = _maxHealth;
+        if (_currentValue > _maxValue)
+            _currentValue = _maxValue;
     }
 }
