@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Hero
+namespace HeroComponents
 {
     [RequireComponent(typeof(HeroInputReader))]
-    public class HeroFlipper : Flipper
+    public class HeroMover : Mover
     {
         private HeroInputReader _inputReader;
 
@@ -11,9 +11,9 @@ namespace Hero
             _inputReader = GetComponent<HeroInputReader>();
 
         private void OnEnable() => 
-            _inputReader.DirectionChanged += UpdateSpriteDirection;
+            _inputReader.DirectionChanged += SetDirection;
 
         private void OnDisable() => 
-            _inputReader.DirectionChanged -= UpdateSpriteDirection;
+            _inputReader.DirectionChanged -= SetDirection;
     }
 }
