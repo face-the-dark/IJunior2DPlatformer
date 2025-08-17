@@ -13,7 +13,7 @@ public class Jumper : MonoBehaviour
     [SerializeField] private float _jumpBufferTime = 0.1f;
     
     [Header("Ground Check Parameters")] [Space]
-    [SerializeField] private GroundDetector groundDetector;
+    [SerializeField] private GroundDetector _groundDetector;
     
     private HeroInputReader _inputReader;
     
@@ -38,7 +38,7 @@ public class Jumper : MonoBehaviour
 
     private void Update()
     {
-        _isGrounded = groundDetector.IsGrounded;
+        _isGrounded = _groundDetector.IsGrounded;
         _isJumpPressing = _direction.y > 0;
 
         UpdateCoyoteCounter();
