@@ -13,10 +13,10 @@ namespace Collecting
             _coins = new List<Coin>();
 
         private void OnEnable() => 
-            _collectZone.OnCollect += Collect;
+            _collectZone.ColliderDetected += Collect;
 
         private void OnDisable() => 
-            _collectZone.OnCollect -= Collect;
+            _collectZone.ColliderDetected -= Collect;
 
         private void Collect(Collider2D other)
         {

@@ -17,10 +17,8 @@ namespace HeroComponents
             _hero = GetComponent<Hero>();
         }
 
-        protected override void FixedUpdate()
+        protected void FixedUpdate()
         {
-            base.FixedUpdate();
-
             Animator.SetFloat(VerticalVelocityKey, _hero.RigidbodyVelocityY);
             Animator.SetBool(IsGroundedKey, _hero.IsGrounded);
         }

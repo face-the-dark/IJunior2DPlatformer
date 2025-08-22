@@ -137,11 +137,11 @@ GameObject:
   - component: {fileID: 2212330969910485795}
   - component: {fileID: 868498694603985774}
   - component: {fileID: 528481781942964935}
-  - component: {fileID: 7566836816416526338}
   - component: {fileID: -1934726617906896306}
   - component: {fileID: 1191701787797735182}
   - component: {fileID: 7978594958440951700}
   - component: {fileID: 4647731060303032559}
+  - component: {fileID: 531504420064646571}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -343,18 +343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waypointsContainer: {fileID: 0}
   _treshold: 1
---- !u!114 &7566836816416526338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029490953505298396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6f746502f46329c0550965650f1ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1934726617906896306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,3 +399,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxValue: 10
+--- !u!114 &531504420064646571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029490953505298396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ed04c11c49451b99bed397dc4621a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

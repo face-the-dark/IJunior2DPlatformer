@@ -9,8 +9,6 @@ public class Mover : MonoBehaviour
 
     private Vector2 _direction;
     
-    public float DirectionX => _direction.x;
-    
     public event Action<Vector2> DirectionChanged;
     
     public float CalculateXVelocity(float rigidbodyVelocityX)

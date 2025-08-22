@@ -26,14 +26,14 @@ namespace Enemy
         private void OnDisable() => 
             _health.DamageTaken -= OnDamageTaken;
 
-        private void OnDamageTaken() => 
-            _rigidbody.AddForce(Vector2.up * _damageForce, ForceMode2D.Impulse);
-
         private void FixedUpdate()
         {
             float xVelocity = _mover.CalculateXVelocity(_rigidbody.velocity.x);
 
             _rigidbody.velocity = new Vector2(xVelocity, _rigidbody.velocity.y);
         }
+
+        private void OnDamageTaken() => 
+            _rigidbody.AddForce(Vector2.up * _damageForce, ForceMode2D.Impulse);
     }
 }

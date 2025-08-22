@@ -20,14 +20,20 @@ public class CreatureAnimator : MonoBehaviour
         Animator = GetComponent<Animator>();
     }
 
-    private void OnEnable() => 
+    private void OnEnable()
+    {
+        _mover.DirectionChanged += OnDirectionChanged;
         _health.DamageTaken += PlayHit;
+    }
 
-    private void OnDisable() => 
+    private void OnDisable()
+    {
+        _mover.DirectionChanged -= OnDirectionChanged;
         _health.DamageTaken -= PlayHit;
+    }
 
-    protected virtual void FixedUpdate() => 
-        Animator.SetBool(IsRunningKey, _mover.DirectionX != 0);
+    private void OnDirectionChanged(Vector2 direction) => 
+        Animator.SetBool(IsRunningKey, direction.x != 0);
 
     private void PlayHit() => 
         Animator.SetTrigger(HitKey);

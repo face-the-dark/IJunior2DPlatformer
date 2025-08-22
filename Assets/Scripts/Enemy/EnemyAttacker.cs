@@ -6,16 +6,7 @@ namespace Enemy
 {
     public class EnemyAttacker : Attacker
     {
-        [SerializeField] protected float _attackCooldown = 1f;
-
-        protected override void DealDamage()
-        {
-            Collider2D[] targets = GetTargets();
-
-            foreach (Collider2D target in targets)
-                if (target.TryGetComponent(out HeroHealth heroHealth))
-                    heroHealth.TakeDamage(Damage);
-        }
+        [SerializeField] private float _attackCooldown = 1f;
 
         public IEnumerator AttackHero()
         {
@@ -27,6 +18,15 @@ namespace Enemy
                 
                 yield return attackCooldownSeconds;
             }
+        }
+
+        protected override void DealDamage()
+        {
+            Collider2D[] targets = GetTargets();
+
+            foreach (Collider2D target in targets)
+                if (target.TryGetComponent(out HeroHealth heroHealth))
+                    heroHealth.TakeDamage(Damage);
         }
 
         private bool CanAttack()

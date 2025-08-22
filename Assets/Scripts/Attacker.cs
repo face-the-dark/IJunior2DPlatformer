@@ -8,14 +8,14 @@ public abstract class Attacker : MonoBehaviour
 
     [SerializeField] protected int Damage;
 
-    protected abstract void DealDamage();
-
-    protected Collider2D[] GetTargets() => 
-        Physics2D.OverlapCircleAll(_attackPoint.position, _attackRadius);
-
     private void OnDrawGizmos()
     {
         Gizmos.color = _attackGizmosColor;
         Gizmos.DrawSphere(_attackPoint.position, _attackRadius);
     }
+
+    protected abstract void DealDamage();
+
+    protected Collider2D[] GetTargets() => 
+        Physics2D.OverlapCircleAll(_attackPoint.position, _attackRadius);
 }

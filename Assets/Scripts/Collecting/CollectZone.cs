@@ -5,9 +5,9 @@ namespace Collecting
 {
     public class CollectZone : MonoBehaviour
     {
-        public event Action<Collider2D> OnCollect;
+        public event Action<Collider2D> ColliderDetected;
 
         private void OnTriggerEnter2D(Collider2D other) => 
-            OnCollect?.Invoke(other);
+            ColliderDetected?.Invoke(other);
     }
 }
