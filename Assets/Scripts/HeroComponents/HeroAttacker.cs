@@ -1,4 +1,4 @@
-using Enemy;
+using EnemyComponents;
 using UnityEngine;
 
 namespace HeroComponents

@@ -1,35 +1,32 @@
-using System.Collections;
 using HeroComponents;
 using UnityEngine;
 
-namespace Enemy
+namespace EnemyComponents
 {
-    [RequireComponent(typeof(Patrol))]
+    [RequireComponent(typeof(EnemyPatrol))]
     public class EnemyMover : Mover
     {
         [SerializeField] private float _treshold = 2f;
         
-        private Patrol _patrol;
+        private EnemyPatrol _enemyPatrol;
         
         protected void Awake() => 
-            _patrol = GetComponent<Patrol>();
+            _enemyPatrol = GetComponent<EnemyPatrol>();
 
         private void OnEnable() => 
-            _patrol.DirectionChanged += SetDirection;
+            _enemyPatrol.DirectionChanged += SetDirection;
 
         private void OnDisable() => 
-            _patrol.DirectionChanged -= SetDirection;
+            _enemyPatrol.DirectionChanged -= SetDirection;
 
-        public IEnumerator GoToHero(Hero hero)
+        public void GoToHero(Hero hero)
         {
-            while (enabled && IsNearHero(hero) == false)
+            if (IsNearHero(hero) == false)
             {
                 Vector2 directionToHero = (hero.transform.position - transform.position).normalized;
                 directionToHero.y = 0;
             
                 SetDirection(directionToHero);
-                
-                yield return null;
             }
         }
 

@@ -1,17 +1,16 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
-namespace Enemy
+namespace EnemyComponents
 {
-    public class Patrol : MonoBehaviour
+    public class EnemyPatrol : MonoBehaviour
     {
         [SerializeField] private Transform _waypointsContainer;
         [SerializeField] private float _treshold = 1f;
 
         private Transform[] _waypoints;
         private int _destinationPointIndex;
-    
+
         public event Action<Vector2> DirectionChanged;
 
         private void Awake()
@@ -20,23 +19,18 @@ namespace Enemy
             _destinationPointIndex = 0;
         }
 
-        public IEnumerator DoPatrol()
+        public void DoPatrol()
         {
-            while (enabled)
-            {
-                if (InOnPoint()) 
-                    _destinationPointIndex = (_destinationPointIndex + 1) % _waypoints.Length;
-            
-                Vector3 direction = (_waypoints[_destinationPointIndex].position - transform.position).normalized;
-                direction.y = 0;
+            if (IsOnPoint())
+                _destinationPointIndex = (_destinationPointIndex + 1) % _waypoints.Length;
 
-                DirectionChanged?.Invoke(direction);
+            Vector3 direction = (_waypoints[_destinationPointIndex].position - transform.position).normalized;
+            direction.y = 0;
 
-                yield return null;
-            }
+            DirectionChanged?.Invoke(direction);
         }
 
-        private bool InOnPoint() => 
+        private bool IsOnPoint() =>
             (_waypoints[_destinationPointIndex].position - transform.position).sqrMagnitude < _treshold;
     }
 }

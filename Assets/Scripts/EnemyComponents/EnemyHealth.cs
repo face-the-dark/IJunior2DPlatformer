@@ -1,7 +1,6 @@
-namespace Enemy
+namespace EnemyComponents
 {
     public class EnemyHealth : Health
     {
-        
     }
 }
