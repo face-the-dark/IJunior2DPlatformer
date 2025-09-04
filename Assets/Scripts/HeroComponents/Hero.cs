@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace HeroComponents
@@ -11,9 +12,12 @@ namespace HeroComponents
         private Jumper _jumper;
         
         private Rigidbody2D _rigidbody;
-
-        public bool IsGrounded => _jumper.IsGrounded;
-        public float RigidbodyVelocityY => _rigidbody.velocity.y;
+        
+        private bool _isLastGrounded;
+        private float _lastRigidbodyVelocityY;
+        
+        public event Action<bool> GroundedChanged;
+        public event Action<float> VerticalVelocityChanged;
         
         private void Awake()
         {
@@ -24,10 +28,30 @@ namespace HeroComponents
 
         private void FixedUpdate()
         {
+            CacheLastVariables();
+
             float xVelocity = _mover.CalculateXVelocity(_rigidbody.velocity.x);
             float yVelocity = _jumper.CalculateYVelocity(_rigidbody.velocity.y);
 
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
+        }
+
+        private void CacheLastVariables()
+        {
+            bool isGrounded = _jumper.IsGrounded;
+            float velocityY = _rigidbody.velocity.y;
+            
+            if (isGrounded != _isLastGrounded)
+            {
+                GroundedChanged?.Invoke(isGrounded);
+                _isLastGrounded = isGrounded;
+            }
+
+            if (Mathf.Approximately(_lastRigidbodyVelocityY, velocityY) == false)
+            {
+                VerticalVelocityChanged?.Invoke(velocityY);
+                _lastRigidbodyVelocityY = velocityY;
+            }
         }
     }
 }

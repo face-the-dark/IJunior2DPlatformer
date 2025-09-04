@@ -20,13 +20,13 @@ public class CreatureAnimator : MonoBehaviour
         Animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _mover.DirectionChanged += OnDirectionChanged;
         _health.DamageTaken += PlayHit;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         _mover.DirectionChanged -= OnDirectionChanged;
         _health.DamageTaken -= PlayHit;

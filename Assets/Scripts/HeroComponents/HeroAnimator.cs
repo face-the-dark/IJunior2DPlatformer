@@ -17,10 +17,29 @@ namespace HeroComponents
             _hero = GetComponent<Hero>();
         }
 
-        protected void FixedUpdate()
+        protected override void OnEnable()
         {
-            Animator.SetFloat(VerticalVelocityKey, _hero.RigidbodyVelocityY);
-            Animator.SetBool(IsGroundedKey, _hero.IsGrounded);
+            base.OnEnable();
+
+            _hero.VerticalVelocityChanged += OnVerticalVelocityChanged;
+            _hero.GroundedChanged += OnGroundedChanged;
+        }
+
+        private void OnGroundedChanged(bool isGrounded)
+        {
+            Animator.SetBool(IsGroundedKey, isGrounded);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            
+            _hero.VerticalVelocityChanged -= OnVerticalVelocityChanged;
+        }
+
+        private void OnVerticalVelocityChanged(float velocityY)
+        {
+            Animator.SetFloat(VerticalVelocityKey, velocityY);
         }
     }
 }
