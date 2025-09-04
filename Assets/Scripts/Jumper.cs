@@ -1,11 +1,11 @@
-using Hero;
+using HeroComponents;
 using UnityEngine;
 using Utils;
 
 [RequireComponent(typeof(HeroInputReader))]
 public class Jumper : MonoBehaviour
 {
-    [SerializeField] private float _jumpForce = 10.0f;
+    [SerializeField] private float _jumpForce = 14.0f;
     [SerializeField] private bool _isMoreJumpControl = false;
     [Range(0.5f, 1.0f)] [SerializeField] private float _jumpControlModifier = 0.5f;
     
@@ -13,7 +13,7 @@ public class Jumper : MonoBehaviour
     [SerializeField] private float _jumpBufferTime = 0.1f;
     
     [Header("Ground Check Parameters")] [Space]
-    [SerializeField] private GroundCheck _groundCheck;
+    [SerializeField] private GroundDetector _groundDetector;
     
     private HeroInputReader _inputReader;
     
@@ -38,7 +38,7 @@ public class Jumper : MonoBehaviour
 
     private void Update()
     {
-        _isGrounded = _groundCheck.IsGrounded;
+        _isGrounded = _groundDetector.IsGrounded;
         _isJumpPressing = _direction.y > 0;
 
         UpdateCoyoteCounter();
