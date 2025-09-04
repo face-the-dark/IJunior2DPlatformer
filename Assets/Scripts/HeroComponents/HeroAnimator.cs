@@ -25,11 +25,6 @@ namespace HeroComponents
             _hero.GroundedChanged += OnGroundedChanged;
         }
 
-        private void OnGroundedChanged(bool isGrounded)
-        {
-            Animator.SetBool(IsGroundedKey, isGrounded);
-        }
-
         protected override void OnDisable()
         {
             base.OnDisable();
@@ -37,9 +32,10 @@ namespace HeroComponents
             _hero.VerticalVelocityChanged -= OnVerticalVelocityChanged;
         }
 
-        private void OnVerticalVelocityChanged(float velocityY)
-        {
+        private void OnVerticalVelocityChanged(float velocityY) => 
             Animator.SetFloat(VerticalVelocityKey, velocityY);
-        }
+
+        private void OnGroundedChanged(bool isGrounded) => 
+            Animator.SetBool(IsGroundedKey, isGrounded);
     }
 }
