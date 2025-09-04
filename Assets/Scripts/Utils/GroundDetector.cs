@@ -10,7 +10,7 @@ namespace Utils
 
         public bool IsGrounded { get; private set; }
         
-        private void Update() => 
+        private void FixedUpdate() => 
             IsGrounded = Physics2D.OverlapCircle(transform.position, _groundDetectionRadius, _groundLayer);
 
         private void OnDrawGizmos()
