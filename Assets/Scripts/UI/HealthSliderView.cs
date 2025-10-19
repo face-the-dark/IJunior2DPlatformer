@@ -5,15 +5,15 @@ namespace UI
 {
     public class HealthSliderView : HealthView
     {
-        [SerializeField] private Slider _slider;
+        [SerializeField] protected Slider Slider;
 
         private void Start()
         {
-            _slider.minValue = Health.MinValue;
-            _slider.maxValue = Health.MaxValue;
+            Slider.minValue = Health.MinValue;
+            Slider.maxValue = Health.MaxValue;
         }
 
-        protected override void UpdateHealthText(int currentValue, int maxValue) => 
-            _slider.value = currentValue;
+        protected override void UpdateView(int currentValue, int maxValue) => 
+            Slider.value = currentValue;
     }
 }

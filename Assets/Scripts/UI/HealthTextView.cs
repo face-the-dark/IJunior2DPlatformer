@@ -7,7 +7,7 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI _text;
         
-        protected override void UpdateHealthText(int currentValue, int maxValue) => 
+        protected override void UpdateView(int currentValue, int maxValue) => 
             _text.text = $"{currentValue} / {maxValue}";
     }
 }

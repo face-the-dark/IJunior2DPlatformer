@@ -7,11 +7,11 @@ namespace UI
         [SerializeField] protected Health Health;
 
         private void OnEnable() => 
-            Health.HealthChanged += UpdateHealthText;
+            Health.HealthChanged += UpdateView;
 
         private void OnDisable() => 
-            Health.HealthChanged -= UpdateHealthText;
+            Health.HealthChanged -= UpdateView;
 
-        protected abstract void UpdateHealthText(int currentValue, int maxValue);
+        protected abstract void UpdateView(int currentValue, int maxValue);
     }
 }
