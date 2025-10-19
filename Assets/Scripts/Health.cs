@@ -7,6 +7,9 @@ public class Health : MonoBehaviour
     
     private int _currentValue;
 
+    public int MinValue => 0;
+    public int MaxValue => _maxValue;
+    
     public event Action DamageTaken;
     public event Action<int, int> HealthChanged;
 
@@ -20,8 +23,8 @@ public class Health : MonoBehaviour
     {
         _currentValue -= damage;
 
-        if (_currentValue <= 0) 
-            _currentValue = 0;
+        if (_currentValue <= MinValue) 
+            _currentValue = MinValue;
         
         DamageTaken?.Invoke();
         HealthChanged?.Invoke(_currentValue, _maxValue);

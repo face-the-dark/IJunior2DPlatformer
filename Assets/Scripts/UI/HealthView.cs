@@ -1,26 +1,17 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UI
 {
-    public class HealthView : MonoBehaviour
+    public abstract class HealthView  : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _text;
-        [SerializeField] private Health _health;
+        [SerializeField] protected Health Health;
 
-        private void OnEnable()
-        {
-            _health.HealthChanged += UpdateHealthText;
-        }
+        private void OnEnable() => 
+            Health.HealthChanged += UpdateHealthText;
 
-        private void OnDisable()
-        {
-            _health.HealthChanged -= UpdateHealthText;
-        }
+        private void OnDisable() => 
+            Health.HealthChanged -= UpdateHealthText;
 
-        private void UpdateHealthText(int currentValue, int maxValue)
-        {
-            _text.text = $"{currentValue} / {maxValue}";
-        }
+        protected abstract void UpdateHealthText(int currentValue, int maxValue);
     }
 }
