@@ -319,6 +319,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_Name
       value: Enemy (3)
@@ -29678,6 +29690,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_Name
       value: Enemy (5)
@@ -31367,6 +31391,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -32454,6 +32490,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
@@ -32657,6 +32705,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3601412125255108766, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
@@ -47052,6 +47112,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_Name
       value: Enemy (6)
@@ -47072,6 +47144,18 @@ PrefabInstance:
     - target: {fileID: 902434622738836710, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
       propertyPath: m_Name
       value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267615324303444127, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267615324303444127, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689576636786077312, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6484720595191931454, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
       propertyPath: m_RootOrder
@@ -47494,6 +47578,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3601412125255108766, guid: 72c950599380c444eb56929baf0b7679, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215449367175706918, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254539341205405147, guid: 72c950599380c444eb56929baf0b7679, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7029490953505298396, guid: 72c950599380c444eb56929baf0b7679, type: 3}
