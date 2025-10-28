@@ -47145,10 +47145,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
-    - target: {fileID: 2155784957590029081, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2267615324303444127, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -47156,14 +47152,6 @@ PrefabInstance:
     - target: {fileID: 2267615324303444127, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3344327679746898359, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091574910877452387, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6484720595191931454, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
       propertyPath: m_RootOrder
