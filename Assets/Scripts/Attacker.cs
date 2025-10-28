@@ -14,6 +14,10 @@ public abstract class Attacker : MonoBehaviour
         Gizmos.DrawSphere(_attackPoint.position, _attackRadius);
     }
 
+    public abstract bool CanDealDamage();
+    
+    public abstract int DealDamageNearest();
+    
     protected abstract void DealDamage();
 
     protected Collider2D[] GetTargets() => 

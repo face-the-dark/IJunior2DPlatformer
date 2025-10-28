@@ -31,6 +31,17 @@ namespace EnemyComponents
             return false;
         }
 
+        public override bool CanDealDamage()
+        {
+            Collider2D[] targets = GetTargets();
+
+            foreach (Collider2D target in targets)
+                if (target.TryGetComponent(out HeroHealth heroHealth))
+                    return true;
+
+            return false;
+        }
+
         protected override void DealDamage()
         {
             Collider2D[] targets = GetTargets();
@@ -39,5 +50,7 @@ namespace EnemyComponents
                 if (target.TryGetComponent(out HeroHealth heroHealth))
                     heroHealth.TakeDamage(Damage);
         }
+
+        public override int DealDamageNearest() => 0;
     }
 }
