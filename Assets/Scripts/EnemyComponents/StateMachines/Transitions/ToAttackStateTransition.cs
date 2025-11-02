@@ -4,12 +4,12 @@ namespace EnemyComponents.StateMachines.Transitions
 {
     public class ToAttackStateTransition : Transition
     {
-        private EnemyAttacker _enemyAttacker;
+        private Attacker _enemyAttacker;
         
-        public ToAttackStateTransition(State nextState, EnemyAttacker enemyAttacker) : base(nextState) => 
+        public ToAttackStateTransition(State nextState, Attacker enemyAttacker) : base(nextState) => 
             _enemyAttacker = enemyAttacker;
 
         protected override bool CanTransit() => 
-            _enemyAttacker.CanAttack();
+            _enemyAttacker.CanDealDamage();
     }
 }

@@ -1,15 +1,11 @@
-﻿namespace HeroComponents
+﻿using Abilities.Vampirism;
+using UnityEngine;
+
+namespace HeroComponents
 {
     public class HeroVampirismAbility : VampirismAbility
     {
-        private HeroInputReader _inputReader;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            
-            _inputReader = GetComponent<HeroInputReader>();
-        }
+        [SerializeField] private HeroInputReader _inputReader;
 
         private void OnEnable() => 
             _inputReader.Vampirized += EnableVampirism;
