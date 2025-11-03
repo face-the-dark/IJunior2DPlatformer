@@ -12,7 +12,7 @@ namespace EnemyComponents.StateMachines.Factory
             EnemyPatrol enemyPatrol,
             EnemyMover enemyMover,
             VisibilityZone visibilityZone,
-            EnemyAttacker enemyAttacker
+            Attacker enemyAttacker
         )
         {
             StateMachine stateMachine = new StateMachine();

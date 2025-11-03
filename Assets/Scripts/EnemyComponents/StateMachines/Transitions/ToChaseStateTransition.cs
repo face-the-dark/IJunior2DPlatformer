@@ -5,13 +5,13 @@ namespace EnemyComponents.StateMachines.Transitions
     public class ToChaseStateTransition : Transition
     {
         private VisibilityZone _visibilityZone;
-        private EnemyAttacker _enemyAttacker;
+        private Attacker _enemyAttacker;
 
         public ToChaseStateTransition
         (
             State nextState,
             VisibilityZone visibilityZone,
-            EnemyAttacker enemyAttacker
+            Attacker enemyAttacker
         ) : base(nextState)
         {
             _visibilityZone = visibilityZone;
@@ -19,6 +19,6 @@ namespace EnemyComponents.StateMachines.Transitions
         }
 
         protected override bool CanTransit() =>
-            _visibilityZone.IsHeroInZone && _enemyAttacker.CanAttack() == false;
+            _visibilityZone.IsHeroInZone && _enemyAttacker.CanDealDamage() == false;
     }
 }
