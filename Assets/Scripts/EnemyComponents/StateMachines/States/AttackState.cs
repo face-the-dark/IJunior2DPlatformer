@@ -4,12 +4,12 @@ namespace EnemyComponents.StateMachines.States
 {
     public class AttackState : State
     {
-        private Attacker _enemyAttacker;
+        private EnemyAttacker _enemyAttacker;
 
-        public AttackState(IStateChanger stateChanger, Attacker enemyAttacker) : base(stateChanger) =>
+        public AttackState(IStateChanger stateChanger, EnemyAttacker enemyAttacker) : base(stateChanger) =>
             _enemyAttacker = enemyAttacker;
 
         protected override void OnUpdate() =>
-            _enemyAttacker.Attack();
+            _enemyAttacker.AttackHero();
     }
 }

@@ -6,7 +6,7 @@ namespace EnemyComponents
 {
     [RequireComponent(typeof(EnemyPatrol))]
     [RequireComponent(typeof(EnemyMover))]
-    [RequireComponent(typeof(Attacker))]
+    [RequireComponent(typeof(EnemyAttacker))]
     [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(EnemyStateMachineFactory))]
@@ -17,7 +17,7 @@ namespace EnemyComponents
 
         private EnemyPatrol _enemyPatrol;
         private EnemyMover _mover;
-        private Attacker _enemyAttacker;
+        private EnemyAttacker _enemyAttacker;
         private Health _health;
         
         private Rigidbody2D _rigidbody;
@@ -31,7 +31,7 @@ namespace EnemyComponents
             _rigidbody = GetComponent<Rigidbody2D>();
 
             _enemyPatrol = GetComponent<EnemyPatrol>();
-            _enemyAttacker = GetComponent<Attacker>();
+            _enemyAttacker = GetComponent<EnemyAttacker>();
             
             _stateMachine = GetComponent<EnemyStateMachineFactory>().Create
             (

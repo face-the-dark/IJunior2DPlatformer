@@ -47153,6 +47153,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5689576636786077312, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6484720595191931454, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -47197,8 +47201,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7853236939119148091, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+    - target: {fileID: 7446789853720576247, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+      propertyPath: _attackGizmosColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446789853720576247, guid: 534eb3161c548f74ca96f0a7918b903b, type: 3}
+      propertyPath: _attackGizmosColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

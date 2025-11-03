@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a2ce7b0b3746fe8fc6d6239bd3c0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 1857419471264047090}
+  Health: {fileID: 4647731060303032559}
   Slider: {fileID: 3655572412872292544}
   _smoothSpeed: 2
 --- !u!114 &5785747102423992068
@@ -549,12 +549,12 @@ GameObject:
   - component: {fileID: 868498694603985774}
   - component: {fileID: 528481781942964935}
   - component: {fileID: -1934726617906896306}
+  - component: {fileID: 7978594958440951700}
+  - component: {fileID: 4647731060303032559}
   - component: {fileID: 531504420064646571}
   - component: {fileID: 1651272373874068846}
   - component: {fileID: 1536813823757317393}
-  - component: {fileID: 1857419471264047090}
-  - component: {fileID: 4124377170303077063}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,6 +770,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visibilityZone: {fileID: 6420311680044624209}
   _damageForce: 10
+--- !u!114 &7978594958440951700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029490953505298396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b3808205304e4bb66a10f553398e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackPoint: {fileID: 2826943028778863874}
+  _attackRadius: 0.5
+  _attackGizmosColor: {r: 0, g: 0, b: 1, a: 1}
+  Damage: 1
+--- !u!114 &4647731060303032559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029490953505298396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea5c6bd9dfd4be3bd6b72c78881582d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxValue: 10
 --- !u!114 &531504420064646571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,35 +836,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: 1
---- !u!114 &1857419471264047090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029490953505298396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f59e5f48d5846ee8d120724c85b8afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxValue: 10
---- !u!114 &4124377170303077063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029490953505298396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e433933913084398b6b119149a395bbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackPoint: {fileID: 2826943028778863874}
-  _attackRadius: 0.5
-  _attackGizmosColor: {r: 1, g: 0, b: 0.09286976, a: 0.2509804}
-  _damage: 1
-  _attackTargetLayer:
-    serializedVersion: 2
-    m_Bits: 128

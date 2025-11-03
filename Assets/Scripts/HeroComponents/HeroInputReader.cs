@@ -8,7 +8,6 @@ namespace HeroComponents
     {
         public event Action<Vector2> DirectionChanged;
         public event Action Attacked;
-        public event Action Vampirized;
     
         public void OnMovement(InputAction.CallbackContext context)
         {
@@ -21,12 +20,6 @@ namespace HeroComponents
         {
             if (context.performed) 
                 Attacked?.Invoke();
-        }
-        
-        public void OnDoVampirize(InputAction.CallbackContext context)
-        {
-            if (context.performed) 
-                Vampirized?.Invoke();
         }
     }
 }
